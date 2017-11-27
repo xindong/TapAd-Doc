@@ -1,4 +1,4 @@
-#1.点击回调
+# 1.点击回调
 
 当TapTap用户发生“点击下载按钮”行为时，系统会通知填写到后台的回调地址，广告主可以获取回调请求中的设备信息进行转化匹配。
 
@@ -28,15 +28,15 @@
 
 `https://xx.xxx.com/track?idfa={IDFA}&time={TIME}&ip={IP}&org_id={ORG_ID}&org_name={ORG_NAME}&game_id={GAME_ID}&game_name={GAME_NAME}&creative_id={CREATIVE_ID}&creative_name={CREATIVE_NAME}&creative_type={CREATIVE_TYPE}&deivce={DEVICE}&callback_http={CALLBACK_HTTP}&callback_https={CALLBACK_HTTPS}`
 
-#2.激活数据回传
+# 2.激活数据回传
 
 当广告主通过`点击回调`链接成功匹配到安装激活时，应该将激活数据回传给TapTap广告系统，可以使用下面两种方法回传。
 
-###2.1.动态回传地址
+### 2.1.动态回传地址
 
 在`点击回调`中，可以设置`{CALLBACK_HTTP}`或`{CALLBACK_HTTPS}`宏，它们会被替换为激活回传地址，分别为HTTP协议和HTTPS协议，选择支持的协议，直接调用对应的地址完成数据回传。
 
-###2.2.手动配置回传地址
+### 2.2.手动配置回传地址
 
 调用地址`https://sense.tapdb.net/api/v2/track/activate`，HTTP Method为GET，若只支持HTTP协议，可以将地址前缀修改为`http://`，需要传递如下参数：
 
