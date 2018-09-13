@@ -1,6 +1,6 @@
 # 1.点击回调
 
-当TapTap用户发生“点击下载按钮”行为时，系统会通知填写到后台的回调地址，广告主可以获取回调请求中的设备信息进行转化匹配。
+当TapTap用户发生“广告转化”行为时，系统会通知填写到后台的回调地址，广告主可以获取回调请求中的设备信息进行转化匹配。
 
 回调地址需要是合法的http或https链接，长度不能超过1000个字符。
 
@@ -19,7 +19,7 @@
 {GAME_NAME} | 游戏名称
 {CREATIVE_ID} | 广告ID
 {CREATIVE_NAME} | 广告名称
-{CREATIVE_TYPE} | 广告类型，taptap表示taptap原生广告
+{CREATIVE_TYPE} | 广告类型，image表示首页信息流图片广告，video表示视频广告
 {DEVICE} | 设备类型，ios表示iOS设备
 {CALLBACK_HTTP} | 安装激活回调地址，HTTP协议，如果成功匹配到安装激活，可通过此链接回传数据
 {CALLBACK_HTTPS} | 安装激活回调地址，HTTPS协议，如果成功匹配到安装激活，可通过此链接回传数据
@@ -38,7 +38,7 @@
 
 ### 2.2.手动配置回传地址
 
-调用地址`https://sense.tapdb.net/api/v2/track/activate`，HTTP Method为GET，若只支持HTTP协议，可以将地址前缀修改为`http://`，需要传递如下参数：
+调用地址`https://sense-cn01.tapdb.net/api/v2/track/activate`，HTTP Method为GET，若只支持HTTP协议，可以将地址前缀修改为`http://`，需要传递如下参数：
 
 参数 | 是否必须 | 说明
 --- | --- | ---
@@ -48,4 +48,4 @@ device | 必须 | 1表示iOS设备
 
 示例：
 
-`https://sense.tapdb.net/api/v2/track/activate?tapAdId=F2F589F4-CCB2-41F4-8657-00011AC62395&product=0&device=1`
+`https://sense-cn01.tapdb.net/api/v2/track/activate?tapAdId=F2F589F4-CCB2-41F4-8657-00011AC62395&product=0&device=1`
